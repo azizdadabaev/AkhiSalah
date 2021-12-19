@@ -33,19 +33,6 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-    private fun initData(){
-        mSensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager?
-
-        mSensorManager?.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)?.also { accelerometer ->
-            mSensorManager?.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL, SensorManager.SENSOR_DELAY_UI)
-        }
-
-        mSensorManager?.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)?.also { magneticField ->
-            mSensorManager?.registerListener(this, magneticField, SensorManager.SENSOR_DELAY_NORMAL, SensorManager.SENSOR_DELAY_UI)
-        }
-
-    }
-
 
     private fun makeCurrentFragment(fragment:Fragment) =
         supportFragmentManager.beginTransaction().apply {
